@@ -1,0 +1,119 @@
+{% load static wagtailuserbar wagtailcore_tags menu_tags %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>
+        {% block title %}
+        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        {% with self.get_site.site_name as site_name %}
+        {% if site_name %}- {{ site_name }}{% endif %}
+        {% endwith %}
+        {% endblock %}
+    </title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="{% static 'icon/favicon.ico' %}" rel="shortcut icon" type="image/vnd.microsoft.icon">
+
+    {# Global stylesheets #}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/taxservices.css' %}">
+
+    {% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %} container-fluid">
+{% wagtailuserbar %}
+{% block header %}
+<div id="header-contact" class="container-fluid">
+    <div class="row">
+        <div class="logo col-lg-3">
+            <a href="/"><img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logotype"></a>
+        </div>
+        <div class="top-contact col-lg-3 offset-lg-3">
+            <h6>CHICAGO</h6>
+            <p><a href="tel:8009130809">Tax: (800) 913-0809</a></p>
+            <p><a href="sms:2246763577">Text us: (224) 676-3577</a></p>
+        </div>
+        <div class="logotypes col-lg-3">
+            <a href="https://www.nstp.org/">
+                <img class="img-fluid" src="https://www.nstp.org/themes/gavias_edmix/logo.png" alt="nstp.org">
+            </a>
+            <a href="https://www.nationalnotary.org/">
+                <img class="img-fluid" src="https://s3-media1.fl.yelpcdn.com/bphoto/m-qy4YcKH8PAVliQgpWqiQ/o.jpg"
+                     alt="nationalnotary.org">
+            </a>
+            <a href="https://quickbooks.intuit.com/find-an-accountant/">
+                <img class="img-fluid"
+                     src="https://unitedstatestaxservices.us/wp-content/uploads/2018/12/ProAdvisor-programme.jpg"
+                     alt="quickbooks.intuit.com">
+            </a>
+            <a href="https://irs.gov">
+                <img class="img-fluid" src="https://unitedstatestaxservices.us/wp-content/uploads/2018/01/irs_logo.png"
+                     alt="irs.gov">
+            </a>
+            <a href="https://irs.gov">
+                <img class="img-fluid" src="https://www.irs.gov/pub/image/ea_color_050118.jpg" alt="irs.gov">
+            </a>
+        </div>
+    </div>
+</div>
+{% main_menu max_levels=3 template="menus/main_menu.html" sub_menu_template="menus/sub_menu.html" %}
+{% endblock %}
+<section id="content" class="container">
+    {% block content %}{% endblock %}
+</section>
+{% block footer %}
+<footer class="row">
+    <div class="col-md-4 col-sm-12">
+        <h4>Follow Us</h4>
+        <div class="socials">
+            <a class="" href="https://www.facebook.com/unitedstatestaxservices" target="_blank">
+                <i class="fa fa-facebook fa-2x"></i></a>
+            <a class="" href="https://www.linkedin.com/company/18401375/" target="_blank"><i
+                    class="fa fa-linkedin fa-2x"></i></a>
+            <a class="" href="https://www.youtube.com/channel/UCo9MetbG2ynIPL4_v6laNBQ"
+               target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+        </div>
+        <div class="py-3">
+            <a href="https://thervo.com/il/elgin/tax-preparation/" target="_blank" rel="noopener"><img
+                    src="//cdn.thervo.com/assets/images/tmp/thervo-2019.png" width="150"></a>
+        </div>
+        <div id="yelp-biz-badge-yelp-3Zi0t7WTozv6okeRZ3bPnA"><a
+                href="https://www.yelp.com/biz/united-states-tax-services-buffalo-grove-2"><img
+                alt="United States Tax Services"
+                src="https://dyn.yelpcdn.com/extimg/en_US/yelp/3Zi0t7WTozv6okeRZ3bPnA.png" width="80" height="15"></a>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h4>Contact Details</h4>
+        <div class="contacts">
+            <p><i class="fa fa-map-marker"></i> <a href="https://goo.gl/maps/TkGGtmSNFiDh1JrJA">251 N Milwaukee Ave, Ste 1025 Buffalo Grove, Illinois 60089</a></p>
+            <p><i class="fa fa-phone"></i> <a href="tel:(800) 913-0809 Chicago">(800) 913-0809 Chicago</a></p>
+            <p><i class="fa fa-mobile"></i> <a href="tel:(800) 913-0809 Chicago">(224) 676-3577 Text only</a></p>
+            <p><i class="fa fa-envelope"></i> <a href="mailto:http://contact@unitedstatestaxservices.us" >contact@unitedstatestaxservices.us</a></p>
+        </div>
+    </div>
+    <div class="col-md-2 col-sm-12">
+        <a href="/payment/" class="btn btn-primary">Paynow</a>
+    </div>
+</footer>
+{% endblock %}
+{# Global javascript #}
+<script src="https://kit.fontawesome.com/c39147399e.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'js/taxservices.js' %}"></script>
+
+{% block extra_js %}
+{# Override this in templates to add extra javascript #}
+{% endblock %}
+</body>
+</html>
