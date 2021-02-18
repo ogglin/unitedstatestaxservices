@@ -164,4 +164,4 @@ WAGTAIL_SITE_NAME = "taxservices"
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://taxservice.vp4.tu'
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '2ftaq(4c+w=0qsqzo#4e&czo+3yelvuu8642k%7m#8d3x0z5e_'
