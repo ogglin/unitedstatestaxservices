@@ -162,4 +162,6 @@ WAGTAIL_SITE_NAME = "taxservices"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = 'http://taxservice.vp4.tu'
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
