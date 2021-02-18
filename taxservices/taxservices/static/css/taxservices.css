@@ -15,6 +15,9 @@ details summary::-webkit-details-marker {  /* нестандартный псе�
 .logotypes {display: flex; flex-wrap: wrap;}
 .logotypes a {max-width: 80px;}
 .top_menu {background-color: #16356e;}
+.top-contact {border-top: 1em;}
+.top-contact a {text-decoration: none;}
+.top-contact a:hover {text-decoration: underline;}
 #content {min-height: calc(100vh - 570px);}
 footer {background-color: #16356e; padding: 2em 0; color: aliceblue;}
 footer a {color: aliceblue;}

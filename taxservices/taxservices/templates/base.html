@@ -37,7 +37,7 @@
             <a href="/"><img class="img-fluid" src="{% static 'images/logo.png' %}" alt="logotype"></a>
         </div>
         <div class="top-contact col-lg-3 offset-lg-3">
-            <h6>CHICAGO</h6>
+            <h5>CHICAGO</h5>
             <p><a href="tel:8009130809">Tax: (800) 913-0809</a></p>
             <p><a href="sms:2246763577">Text us: (224) 676-3577</a></p>
         </div>
@@ -54,17 +54,19 @@
                      src="https://unitedstatestaxservices.us/wp-content/uploads/2018/12/ProAdvisor-programme.jpg"
                      alt="quickbooks.intuit.com">
             </a>
-            <a href="https://irs.gov">
+            <a href="https://irs.gov" style="max-width: 100px;">
                 <img class="img-fluid" src="https://unitedstatestaxservices.us/wp-content/uploads/2018/01/irs_logo.png"
                      alt="irs.gov">
             </a>
-            <a href="https://irs.gov">
+            <a href="https://irs.gov" style="max-width: 200px;">
                 <img class="img-fluid" src="https://www.irs.gov/pub/image/ea_color_050118.jpg" alt="irs.gov">
             </a>
         </div>
     </div>
 </div>
+
 {% main_menu max_levels=3 template="menus/main_menu.html" sub_menu_template="menus/sub_menu.html" %}
+
 {% endblock %}
 <section id="content" class="container">
     {% block content %}{% endblock %}
