@@ -1,28 +1,29 @@
 {% load menu_tags %}
-
-<nav class="navbar navbar-expand-lg navbar-dark top_menu row">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#top_menuContent" aria-controls="top_menuContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="top_menuContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          {% for item in menu_items %}
-            {% if item.has_children_in_menu %}
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle {{ item.active_class }}" href="{{ item.href }}" id="{{ item.text }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ item.text }}</a>
-                  <ul class="dropdown-menu" aria-labelledby="{{ item.text }}">
-                    {% sub_menu item %}
-                  </ul>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                <a class="nav-link {{ item.active_class }}" href="{{ item.href }}">{{ item.text }}</a>
-              </li>
-            {% endif %}
-        {% endfor %}
-      </ul>
-      <a href="/payment/" class="btn btn-primary">Paynow</a>
-    </div>
-  </div>
-</nav>
+<div class="top_menu">
+    <nav class="navbar navbar-expand-lg navbar-dark row">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#top_menuContent" aria-controls="top_menuContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="top_menuContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% for item in menu_items %}
+                {% if item.has_children_in_menu %}
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle {{ item.active_class }}" href="{{ item.href }}" id="{{ item.text }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ item.text }}</a>
+                      <ul class="dropdown-menu" aria-labelledby="{{ item.text }}">
+                        {% sub_menu item %}
+                      </ul>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link {{ item.active_class }}" href="{{ item.href }}">{{ item.text }}</a>
+                  </li>
+                {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="/payment/" class="btn btn-primary" id="paynow">Paynow</a>
+</div>
