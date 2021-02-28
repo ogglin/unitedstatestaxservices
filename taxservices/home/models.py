@@ -32,6 +32,18 @@ class HomePage(Page):
         return context
 
 
+class CategoryPage(Page):
+    template = 'category/category_page.html'
+
+    def get_context(self, request, *args, **kwargs):
+        # context = super(CategoryPage, self).get_context(request, *args, **kwargs)
+        context = super().get_context(request)
+        context['posts'] = self.get_children().filter(live=True)
+        context['page'] = self
+
+        return context
+
+
 class FormField(AbstractFormField):
     page = ParentalKey('FormPage', on_delete=models.CASCADE, related_name='form_fields')
 
