@@ -1,20 +1,22 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags  %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 
 {% block content %}
 
-<div class="py-2">
-    <h1>{{ page.title }}:</h1>
-    {% for post in posts %}
-        <div class="news-item">
-            <div class="">{% image post.feed_image max-300x150 %}</div>
-            <div class="">
-                <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-                <p><small>{{ post.last_published_at }}</small></p>
-            </div>
+    <div class="py-2">
+        <h1>{{ page.title }}:</h1>
+        <div class="news-items">
+            {% for post in posts %}
+                <div class="news-item">
+                    <div class="text-center">{% image post.specific.feed_image max-300x300 class="img-fluid" %}</div>
+                    <div class="">
+                        <p><small>{{ post.last_published_at }}</small></p>
+                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
-</div>
+    </div>
 
 {% endblock content %}

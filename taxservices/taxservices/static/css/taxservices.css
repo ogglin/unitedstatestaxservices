@@ -31,11 +31,33 @@ footer .contacts i {width: 1.4em;}
 .fa-linkedin:hover {color: #2867B2;}
 .fa-youtube:hover {color: #FF0000;}
 
+.news-items {
+  display: grid;
+  grid-template-areas: 'item item item item';
+}
+
 .news-item {
+  padding: 10px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@media all and (max-width: 1200px) {
+  .news-items {
+    grid-template-areas: 'item item item';
+  }
+}
+
+@media all and (max-width: 991px) {
+  .news-items {
+    grid-template-areas: 'item item';
+  }
 }
 
 @media all and (max-width: 640px) {
+  .news-items {
+    grid-template-areas: 'item';
+  }
   footer {text-align: center;}
   .logotypes {display: none;}
   .top-contact {text-align: center;}
