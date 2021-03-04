@@ -31,6 +31,10 @@ footer .contacts i {width: 1.4em;}
 .fa-linkedin:hover {color: #2867B2;}
 .fa-youtube:hover {color: #FF0000;}
 
+.news-item {
+  display: flex;
+}
+
 @media all and (max-width: 640px) {
   footer {text-align: center;}
   .logotypes {display: none;}
