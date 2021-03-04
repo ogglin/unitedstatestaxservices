@@ -25,6 +25,8 @@ details summary::-webkit-details-marker { /* нестандартный псев
 .head-flex {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
 }
 
 .logotypes {
