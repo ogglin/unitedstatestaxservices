@@ -9,13 +9,11 @@
         <div class="news-items">
             {% for post in posts %}
                 <div class="news-item">
-                    <a href="{{ post.url }}">
-                        <div class="text-center">{% image post.specific.feed_image fill-400x300 class="img-fluid" %}</div>
-                        <div class="">
-                            <small>{{ post.last_published_at }}</small>
-                            <h4>{{ post.title }}</h4>
-                        </div>
-                    </a>
+                    <div class="text-center">{% image post.specific.feed_image fill-400x300 class="img-fluid" %}</div>
+                    <div class="">
+                        <small>{{ post.last_published_at }}</small>
+                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    </div>
                 </div>
             {% endfor %}
         </div>
