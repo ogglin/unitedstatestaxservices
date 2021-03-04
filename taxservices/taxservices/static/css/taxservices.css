@@ -1,66 +1,160 @@
-body {overflow-x: hidden;}
-summary {cursor: pointer; font-weight: 700;}
+body {
+    overflow-x: hidden;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
 details summary {
-  display: block;  /* у summary по умолчанию свойство display в значении list-item, потому поддерживается свойство list-style */
-  width: 10em;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;  /* блок раскрывается при щелчке по кнопке, а не по всей строке */
-  border-bottom: none;  /* подводка точками или тире часто используется для элементов, с которыми пользователю предлагается взаимодействовать, можно заменить на text-decoration */
-  outline-style: none;  /* удалить обводку при фокусе */
-  cursor: pointer;
+    display: block; /* у summary по умолчанию свойство display в значении list-item, потому поддерживается свойство list-style */
+    width: 10em;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; /* блок раскрывается при щелчке по кнопке, а не по всей строке */
+    border-bottom: none; /* подводка точками или тире часто используется для элементов, с которыми пользователю предлагается взаимодействовать, можно заменить на text-decoration */
+    outline-style: none; /* удалить обводку при фокусе */
+    cursor: pointer;
 }
-details summary::-webkit-details-marker {  /* нестандартный псевдоэлемент Google Chrome */
-  display: none;
+
+details summary::-webkit-details-marker { /* нестандартный псевдоэлемент Google Chrome */
+    display: none;
 }
-.logotypes {display: flex; flex-wrap: wrap; align-items: baseline;}
-.logotypes a {max-width: 100%; margin: 0 0.3em;}
-.top_menu {background-color: #16356e; position: relative; margin-right: -15px; margin-left: -15px; padding: 0 15px;}
-.top-contact {padding-top: 1em; text-align: right;}
-.top-contact a {text-decoration: none;}
-.top-contact a:hover {text-decoration: underline;}
-#paynow {position: absolute; top: 0.6em; right: 1em;}
-#content {min-height: calc(100vh - 555px);}
-footer {background-color: #16356e; padding: 2em 0; color: aliceblue;}
-footer a {color: aliceblue;}
-footer a:hover {color: aliceblue; text-decoration: none;}
-footer .contacts i {width: 1.4em;}
-.socials a {padding: 5px;}
-.fa-facebook, .fa-linkedin, .fa-youtube {color: aliceblue;}
-.fa-facebook:hover {color: #3b5998;}
-.fa-linkedin:hover {color: #2867B2;}
-.fa-youtube:hover {color: #FF0000;}
+
+.head-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.logotypes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.logotypes a img {
+    height: 50px;
+}
+
+.top_menu {
+    background-color: #16356e;
+    position: relative;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0 15px;
+}
+
+.top-contact {
+    padding: 10px;
+    text-align: right;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.top-contact a {
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.top-contact a:hover {
+    text-decoration: underline;
+}
+
+#paynow {
+    position: absolute;
+    top: 0.6em;
+    right: 1em;
+}
+
+#content {
+    min-height: calc(100vh - 555px);
+}
+
+footer {
+    background-color: #16356e;
+    padding: 2em 0;
+    color: aliceblue;
+}
+
+footer a {
+    color: aliceblue;
+}
+
+footer a:hover {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+footer .contacts i {
+    width: 1.4em;
+}
+
+.socials a {
+    padding: 5px;
+}
+
+.fa-facebook, .fa-linkedin, .fa-youtube {
+    color: aliceblue;
+}
+
+.fa-facebook:hover {
+    color: #3b5998;
+}
+
+.fa-linkedin:hover {
+    color: #2867B2;
+}
+
+.fa-youtube:hover {
+    color: #FF0000;
+}
 
 .news-items {
-  display: grid;
-  grid-template-areas: 'item item item item';
+    display: grid;
+    grid-template-areas: 'item item item item';
 }
 
 .news-item {
-  padding: 10px;
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px 0 rgba(100, 100, 100, 0.5);
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px 0 rgba(100, 100, 100, 0.5);
 }
+
 @media all and (max-width: 1200px) {
-  .news-items {
-    grid-template-areas: 'item item item';
-  }
+    .news-items {
+        grid-template-areas: 'item item item';
+    }
 }
 
 @media all and (max-width: 991px) {
-  .news-items {
-    grid-template-areas: 'item item';
-  }
+    .news-items {
+        grid-template-areas: 'item item';
+    }
 }
 
 @media all and (max-width: 640px) {
-  .news-items {
-    grid-template-areas: 'item';
-  }
-  footer {text-align: center;}
-  .logotypes {display: none;}
-  .top-contact {text-align: center;}
+    .news-items {
+        grid-template-areas: 'item';
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .logotypes {
+        display: none;
+    }
+
+    .top-contact {
+        text-align: center;
+    }
 }
