@@ -8,16 +8,25 @@ from wagtail.core.fields import StreamField
 from wagtail.core.fields import RichTextField
 
 from wagtail.core.models import Page
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 
 class HomePage(Page):
     body = RichTextField(blank=True)
+    feed_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
     html = StreamField([
         ('raw_html', blocks.RawHTMLBlock(blank=True, required=False)),
     ])
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
+        ImageChooserPanel('feed_image'),
         StreamFieldPanel('html', classname="full"),
     ]
 
