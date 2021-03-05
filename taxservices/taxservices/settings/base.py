@@ -51,6 +51,8 @@ INSTALLED_APPS = [
 
     'wagtail.contrib.modeladmin',  # Don't repeat if it's there already
     'wagtailmenus',
+    'captcha',
+    'wagtailcaptcha',
 ]
 
 MIDDLEWARE = [
@@ -165,3 +167,8 @@ WAGTAIL_SITE_NAME = "taxservices"
 BASE_URL = 'http://taxservice.vp4.tu'
 
 SECRET_KEY = '2ftaq(4c+w=0qsqzo#4e&czo+3yelvuu8642k%7m#8d3x0z5e_'
+
+# Recaptcha settings
+RECAPTCHA_PUBLIC_KEY = '6LcT33IaAAAAAJBS4DlvQbYlzWiEyA835dID_tbM'
+RECAPTCHA_PRIVATE_KEY = '6LcT33IaAAAAAPeQqTf5W4uKgjfRH_N35BIc_-3_'
+NOCAPTCHA = True

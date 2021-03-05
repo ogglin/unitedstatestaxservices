@@ -9,6 +9,7 @@ from wagtail.core.fields import RichTextField
 
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtailcaptcha.models import WagtailCaptchaEmailForm
 
 
 class HomePage(Page):
@@ -57,7 +58,7 @@ class FormField(AbstractFormField):
     page = ParentalKey('FormPage', on_delete=models.CASCADE, related_name='form_fields')
 
 
-class FormPage(AbstractEmailForm):
+class FormPage(WagtailCaptchaEmailForm):
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
 
